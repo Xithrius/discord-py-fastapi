@@ -1,0 +1,9 @@
+[project]
+dependencies = []
+requires-python = ">=3.11"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "-e file:///${PROJECT_ROOT}/api",
+    "-e file:///${PROJECT_ROOT}/bot",
+]
