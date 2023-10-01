@@ -1,0 +1,18 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider             = "prisma-client-py"
+    recursive_type_depth = -1
+}
+
+model Messages {
+    id         String   @id @default(cuid())
+    server_id  String
+    user_id    String
+    created_at DateTime @default(now())
+
+    @@map("messages")
+}
